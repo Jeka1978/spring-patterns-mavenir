@@ -1,24 +1,28 @@
 package com.epam.chain_of_responsibility;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
 /**
  * @author Evgeny Borisov
  */
+@Component
 public class PersonMainValidator {
 
+    @Autowired
+    private List<Validator> validators;
+    
+
     public String validate(Person person) {
+        String msg = validators.stream()
+                .map(validator -> validator.validate(person))
+                .flatMap(Optional::stream)
+                .collect(Collectors.joining(", "));
 
-        String msg = "";
-        if (person.getAge() < 0) {
-            msg += " age can't be negative";
-        }
-        if (!person.getEmail().contains("@")) {
-            msg += ", email not valid";
-        }
-
-        if (msg == "") {
-            return "no problem";
-
-        }
         return msg;
     }
 }
