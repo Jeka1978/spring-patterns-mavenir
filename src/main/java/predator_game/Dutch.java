@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
  * @author Evgeny Borisov
  */
 @Service
-@Primary
 public class Dutch extends Commando{
 
 }

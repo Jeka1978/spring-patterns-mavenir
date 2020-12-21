@@ -1,5 +1,6 @@
 package predator_game;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -8,8 +9,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class PlasmaGun {
 
-    public PlasmaGun() {
+    private final Commando mac;
+
+
+    public PlasmaGun(@Indian Commando mac) {
         System.out.println("Plazma arrived");
+        this.mac = mac;
     }
 
     public void shoot(Commando commando) {
