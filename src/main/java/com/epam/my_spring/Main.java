@@ -11,6 +11,5 @@ public class Main {
 
         CoronaController coronaController = context.getObject(CoronaController.class);
         coronaController.stam();
-        context.getObject(OlgaService.class).doWork();
     }
 }

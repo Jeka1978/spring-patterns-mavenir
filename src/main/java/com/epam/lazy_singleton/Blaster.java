@@ -1,6 +1,7 @@
 package com.epam.lazy_singleton;
 
 import org.springframework.context.annotation.Lazy;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -8,7 +9,9 @@ import javax.annotation.PostConstruct;
 /**
  * @author Evgeny Borisov
  */
-@Service
+
+@Component
+@Lazy
 public class Blaster {
 
     @PostConstruct

@@ -6,7 +6,7 @@ import java.util.Random;
  * @author Evgeny Borisov
  */
 @Singleton
-public class CoronaService {
+public  final class CoronaService {
 
 
     @InjectRandomInt(min = 3, max = 100)
@@ -17,6 +17,7 @@ public class CoronaService {
         System.out.println("was created");
     }
 
+    @Benchmark
     public int countInfectedToday() {
 
         return bound;
