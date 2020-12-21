@@ -16,7 +16,8 @@ class PredatorTest {
     GenericApplicationContext context;
 
     @Autowired
-    private Billy billy;
+    private Commando billy;
+
     @Autowired
     private Predator predator;
     @Test
