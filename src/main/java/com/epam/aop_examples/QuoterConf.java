@@ -1,6 +1,8 @@
 package com.epam.aop_examples;
 
+import com.epam.aop_examples.quoters.Quoter;
 import com.epam.aop_examples.quoters.QuoterAggregator;
+import com.epam.aop_examples.quoters.TerminatorQuoter;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -18,6 +20,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 public class QuoterConf {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(QuoterConf.class);
-        context.getBean(QuoterAggregator.class).printAllQuotes();
+//        Quoter terminatorQuoter = context.getBean("terminatorQuoter", Quoter.class);
+//        terminatorQuoter.sayQuote();
     }
 }

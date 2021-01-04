@@ -6,6 +6,8 @@ import org.reflections.Reflections;
 import org.springframework.cglib.proxy.Enhancer;
 import org.springframework.cglib.proxy.InvocationHandler;
 
+import javax.annotation.PostConstruct;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.util.ArrayList;
@@ -37,6 +39,12 @@ public class ObjectFactory {
         configurators.forEach(configurator -> configurator.configure(t, context));
 
 
+        invokeInit(type, t);
+
+
+        // wrap t with proxy if needed using all proxyConfigurators
+
+
 
 
         if (Arrays.stream(type.getMethods()).anyMatch(method -> method.isAnnotationPresent(Benchmark.class))) {
@@ -57,6 +65,15 @@ public class ObjectFactory {
 
 
         return t;
+    }
+
+    private <T> void invokeInit(Class<T> type, T t) throws IllegalAccessException, InvocationTargetException {
+        Method[] methods = type.getMethods();
+        for (Method method : methods) {
+            if (method.isAnnotationPresent(PostConstruct.class)) {
+                method.invoke(t);
+            }
+        }
     }
 }
 

@@ -5,4 +5,6 @@ package com.epam.aop_examples.quoters;
  */
 public interface Quoter {
     void sayQuote();
+    void sayYes();
+    void sayInitCache();
 }

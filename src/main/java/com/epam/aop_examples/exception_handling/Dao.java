@@ -9,6 +9,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class Dao {
     public void save() {
+
+
         System.out.println("trying to save");
         throw new DBException("fire all DBA");
     }

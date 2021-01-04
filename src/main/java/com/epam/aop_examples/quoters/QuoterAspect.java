@@ -4,10 +4,7 @@ import com.epam.chain_of_responsibility.Person;
 import lombok.SneakyThrows;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.AfterThrowing;
-import org.aspectj.lang.annotation.Around;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -27,9 +24,15 @@ public class QuoterAspect {
         System.out.print("This is quote of "+className+" : ");
     }*/
 
+    @Pointcut("execution(* com.epam.aop_examples..*.say*(..))")
+    public void allSayMethods(){}
+
+    @Pointcut("@annotation(Deprecated)")
+    public void deperecatedMethods(){}
+
 
 //    @Around("@annotation(com.epam.my_spring.InjectRandomInt)")
-    @Around("execution(* com.epam.aop_examples..*.say*(..))")
+    @Around("allSayMethods() && deperecatedMethods()")
 //    @AfterThrowing
     public Object beforeSayMethods(ProceedingJoinPoint jp) throws Throwable {
 
