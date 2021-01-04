@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 /**
  * @author Evgeny Borisov
  */
-@Component
+@TreatmentType(TreatmentTypeEnum.ALCOHOL)
 public class Cognac implements Treatment {
     @Override
     public void use(Patient patient) {

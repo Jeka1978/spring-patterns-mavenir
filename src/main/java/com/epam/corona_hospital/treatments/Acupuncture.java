@@ -5,10 +5,10 @@ import org.springframework.stereotype.Component;
 /**
  * @author Evgeny Borisov
  */
-@TreatmentType(TreatmentTypeEnum.ALCOHOL)
-public class Vodka implements Treatment {
+@TreatmentType(TreatmentTypeEnum.CHINES)
+public class Acupuncture implements Treatment {
     @Override
     public void use(Patient patient) {
-        System.out.println("Use 100 gramm of Vodka 3 times before each meal");
+        System.out.println("100 spears into your body");
     }
 }

@@ -1,7 +1,6 @@
 package com.epam.corona_hospital.healers;
 
 import com.epam.corona_hospital.treatments.*;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -10,14 +9,17 @@ import java.util.List;
  * @author Evgeny Borisov
  */
 @Component
-public class AlcoDoctor implements Healer {
+public class Cleric implements Healer {
 
-    @TreatmentType(TreatmentTypeEnum.ALCOHOL)
+    @AutowireList({Vodka.class, Sauna.class, Garlic.class})
     private List<Treatment> treatments;
+
 
     @Override
     public void treat(Patient patient) {
-        System.out.println("Let's drink: ");
+        System.out.println("Cleric will save you!");
         treatments.forEach(treatment -> treatment.use(patient));
+
+
     }
 }
