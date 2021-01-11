@@ -1,6 +1,7 @@
 package com.epam.corona_hospital.healers;
 
 import com.epam.corona_hospital.treatments.*;
+import com.epam.infrastartermavenir.AutowireList;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
