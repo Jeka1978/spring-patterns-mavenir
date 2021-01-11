@@ -13,8 +13,7 @@ import org.springframework.context.annotation.Configuration;
 
 import java.util.Random;
 
-import static com.epam.corona_hospital.healers.Healer.FOLK;
-import static com.epam.corona_hospital.healers.Healer.TRADITIONAL;
+import static com.epam.corona_hospital.healers.Healer.*;
 
 /**
  * @author Evgeny Borisov
@@ -33,6 +32,10 @@ public class CoronaConf {
         context.getBean(Hospital.class).treatPatient(Patient.builder().method(FOLK).build());
         System.out.println("************");
         context.getBean(Hospital.class).treatPatient(Patient.builder().method(TRADITIONAL).build());
+        System.out.println("************");
+        context.getBean(Hospital.class).treatPatient(Patient.builder().method(ALCOHOL).build());
+        System.out.println("************");
+        context.getBean(Hospital.class).treatPatient(Patient.builder().method("chineese").build());
     }
 
 

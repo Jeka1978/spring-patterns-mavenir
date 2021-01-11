@@ -7,10 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import static com.epam.corona_hospital.healers.Healer.FOLK;
+import static com.epam.corona_hospital.healers.Healer.TRADITIONAL;
+
 /**
  * @author Evgeny Borisov
  */
-@Component
+@Component(TRADITIONAL)
 public class Physician implements Healer {
     @Autowired
     private Treatment aspirin;

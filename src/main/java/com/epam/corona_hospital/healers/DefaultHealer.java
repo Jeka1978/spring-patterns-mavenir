@@ -3,6 +3,7 @@ package com.epam.corona_hospital.healers;
 import com.epam.corona_hospital.treatments.Patient;
 import com.epam.corona_hospital.treatments.Treatment;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -12,6 +13,7 @@ import java.util.Random;
  * @author Evgeny Borisov
  */
 @Component
+//@Primary
 public class DefaultHealer implements Healer {
 
     @Autowired

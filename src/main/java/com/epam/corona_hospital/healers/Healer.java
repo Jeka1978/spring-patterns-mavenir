@@ -15,4 +15,5 @@ public interface Healer {
 
     String TRADITIONAL = "traditional";
     String FOLK = "folk";
+    String ALCOHOL = "alcohol";
 }

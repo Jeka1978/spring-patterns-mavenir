@@ -6,10 +6,13 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+import static com.epam.corona_hospital.healers.Healer.ALCOHOL;
+import static com.epam.corona_hospital.healers.Healer.FOLK;
+
 /**
  * @author Evgeny Borisov
  */
-@Component
+@Component(ALCOHOL)
 public class AlcoDoctor implements Healer {
 
     @TreatmentType(TreatmentTypeEnum.ALCOHOL)

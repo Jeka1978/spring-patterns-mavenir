@@ -6,10 +6,12 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+import static com.epam.corona_hospital.healers.Healer.FOLK;
+
 /**
  * @author Evgeny Borisov
  */
-@Component
+@Component(FOLK)
 public class Cleric implements Healer {
 
     @AutowireList({Vodka.class, Sauna.class, Garlic.class})
