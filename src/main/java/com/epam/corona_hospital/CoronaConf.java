@@ -11,15 +11,26 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 import static com.epam.corona_hospital.healers.Healer.*;
+import static java.util.function.Function.identity;
+import static java.util.stream.Collectors.toMap;
 
 /**
  * @author Evgeny Borisov
  */
 @SpringBootApplication
 public class CoronaConf {
+
+
+    @Bean
+    public Map<String, Healer> healerMap(List<Healer> healers) {
+        return healers.stream().collect(toMap(Healer::myType, identity()));
+
+    }
 
     @Bean
     public Random random(){

@@ -1,5 +1,6 @@
 package com.epam.corona_hospital.healers;
 
+import com.epam.corona_hospital.Hospital;
 import com.epam.corona_hospital.treatments.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -28,4 +29,6 @@ public class AlcoDoctor implements Healer {
     public String myType() {
         return ALCOHOL;
     }
+
+
 }
