@@ -13,7 +13,7 @@ import static com.epam.corona_hospital.healers.Healer.TRADITIONAL;
 /**
  * @author Evgeny Borisov
  */
-@Component(TRADITIONAL)
+@Component
 public class Physician implements Healer {
     @Autowired
     private Treatment aspirin;
@@ -22,5 +22,10 @@ public class Physician implements Healer {
     public void treat(Patient patient) {
         System.out.println("Physician says:");
         aspirin.use(patient);
+    }
+
+    @Override
+    public String myType() {
+        return TRADITIONAL;
     }
 }

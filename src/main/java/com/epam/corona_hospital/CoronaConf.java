@@ -29,13 +29,13 @@ public class CoronaConf {
 
     public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(CoronaConf.class);
-        context.getBean(Hospital.class).treatPatient(Patient.builder().method(FOLK).build());
-        System.out.println("************");
-        context.getBean(Hospital.class).treatPatient(Patient.builder().method(TRADITIONAL).build());
-        System.out.println("************");
-        context.getBean(Hospital.class).treatPatient(Patient.builder().method(ALCOHOL).build());
-        System.out.println("************");
-        context.getBean(Hospital.class).treatPatient(Patient.builder().method("chineese").build());
+//        context.getBean(Hospital.class).treatPatient(Patient.builder().method(FOLK).build());
+//        System.out.println("************");
+//        context.getBean(Hospital.class).treatPatient(Patient.builder().method(TRADITIONAL).build());
+//        System.out.println("************");
+//        context.getBean(Hospital.class).treatPatient(Patient.builder().method(ALCOHOL).build());
+//        System.out.println("************");
+//        context.getBean(Hospital.class).treatPatient(Patient.builder().method("chineese").build());
     }
 
 

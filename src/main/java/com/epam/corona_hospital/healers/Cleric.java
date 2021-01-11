@@ -11,7 +11,7 @@ import static com.epam.corona_hospital.healers.Healer.FOLK;
 /**
  * @author Evgeny Borisov
  */
-@Component(FOLK)
+@Component
 public class Cleric implements Healer {
 
     @AutowireList({Vodka.class, Sauna.class, Garlic.class})
@@ -24,5 +24,10 @@ public class Cleric implements Healer {
         treatments.forEach(treatment -> treatment.use(patient));
 
 
+    }
+
+    @Override
+    public String myType() {
+        return FOLK;
     }
 }

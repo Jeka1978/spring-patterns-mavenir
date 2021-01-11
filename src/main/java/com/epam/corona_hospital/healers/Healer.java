@@ -8,6 +8,8 @@ import com.epam.corona_hospital.treatments.Patient;
 public interface Healer {
     void treat(Patient patient);
 
+    String myType();
+
     // todo add 3 implementations
 
 

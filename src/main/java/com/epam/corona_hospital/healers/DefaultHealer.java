@@ -13,7 +13,7 @@ import java.util.Random;
  * @author Evgeny Borisov
  */
 @Component
-//@Primary
+@Primary
 public class DefaultHealer implements Healer {
 
     @Autowired
@@ -28,6 +28,11 @@ public class DefaultHealer implements Healer {
         System.out.println("Welcome to Default healer");
         treatments.get(random.nextInt(treatments.size())).use(patient);
         System.out.println();
+    }
+
+    @Override
+    public String myType() {
+        return "default";
     }
 }
 
